@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.support.DataAccessUtils;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
@@ -36,6 +37,7 @@ public class JdbcUserRepository implements UserRepository {
 
     @Override
     public User save(User user) {
+   //     BeanPropertySqlParameterSource parameterSource = new BeanPropertySqlParameterSource(user);
         MapSqlParameterSource map = new MapSqlParameterSource()
                 .addValue("id", user.getId())
                 .addValue("name", user.getName())
@@ -45,8 +47,11 @@ public class JdbcUserRepository implements UserRepository {
                 .addValue("enabled", user.isEnabled())
                 .addValue("caloriesPerDay", user.getCaloriesPerDay());
 
+
+
         if (user.isNew()) {
-            Number newKey = insertUser.executeAndReturnKey(map);
+           Number newKey = insertUser.executeAndReturnKey(map);
+    //        Number newKey = insertUser.executeAndReturnKey(parameterSource);
             user.setId(newKey.intValue());
         } else if (namedParameterJdbcTemplate.update(
                 "UPDATE users SET name=:name, email=:email, password=:password, " +
