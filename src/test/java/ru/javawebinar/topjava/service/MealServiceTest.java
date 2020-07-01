@@ -47,7 +47,6 @@ public class MealServiceTest {
     }
 
     @Test
-//    @Transactional
     public void create() throws Exception {
         Meal created = service.create(getNew(), USER_ID);
         int newId = created.id();
@@ -89,7 +88,6 @@ public class MealServiceTest {
     }
 
     @Test
-    @Transactional
     public void getAll() throws Exception {
         MEAL_MATCHER.assertMatch(service.getAll(USER_ID), MEALS);
     }
