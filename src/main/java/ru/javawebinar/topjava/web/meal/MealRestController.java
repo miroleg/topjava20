@@ -18,7 +18,7 @@ import static ru.javawebinar.topjava.util.ValidationUtil.assureIdConsistent;
 import static ru.javawebinar.topjava.util.ValidationUtil.checkNew;
 
 @Controller
-public class MealRestController {
+public class MealRestController extends AbstractMealController{
     private static final Logger log = LoggerFactory.getLogger(MealRestController.class);
 
     private final MealService service;
@@ -27,7 +27,7 @@ public class MealRestController {
         this.service = service;
     }
 
-    public Meal get(int id) {
+ /*   public Meal get(int id) {
         int userId = SecurityUtil.authUserId();
         log.info("get meal {} for user {}", id, userId);
         return service.get(id, userId);
@@ -59,12 +59,15 @@ public class MealRestController {
         service.update(meal, userId);
     }
 
+  */
+
     /**
      * <ol>Filter separately
      * <li>by date</li>
      * <li>by time for every date</li>
      * </ol>
      */
+
     public List<MealTo> getBetween(@Nullable LocalDate startDate, @Nullable LocalTime startTime,
                                    @Nullable LocalDate endDate, @Nullable LocalTime endTime) {
         int userId = SecurityUtil.authUserId();

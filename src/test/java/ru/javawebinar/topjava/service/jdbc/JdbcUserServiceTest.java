@@ -13,11 +13,4 @@ public class JdbcUserServiceTest extends AbstractUserServiceTest {
     @Ignore
     @Test
     public void createWithException(){}
-/*
-
-    @Ignore @Before
-    public void setUp() {}
-
-   */
-
 }
