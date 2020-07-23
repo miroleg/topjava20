@@ -22,10 +22,10 @@ import static ru.javawebinar.topjava.util.ValidationUtil.checkNew;
  //   @Controller
     public abstract class AbstractMealController {
 
-        private static final Logger log = LoggerFactory.getLogger(ru.javawebinar.topjava.web.meal.MealRestController.class);
+        protected static final Logger log = LoggerFactory.getLogger(ru.javawebinar.topjava.web.meal.MealRestController.class);
 
         @Autowired
-        private  MealService service;
+        protected  MealService service;
 
 /*       public MealRestController(MealService service) {
             this.service = service;
