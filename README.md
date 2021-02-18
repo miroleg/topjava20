@@ -1,0 +1,2 @@
+# topjava20
+2020 JavaOps project v. 20 Разработка Spring 5/JPA enterprise-приложения c авторизацией и правами доступа на основе ролей на стеке: Maven, Spring MVC, Spring Security, REST (Jackson), Java 8 Stream API. Cохранение в базы Postgres и HSQLDB на основе Spring JDBC, JPA (Hibernate) и Spring-Data-JPA. Реализация и тестирование REST и AJAX контроллеров (более 100 JUnit5 тестов). Реализация клиента на Bootstrap (css/js), datatables, jQuery.
