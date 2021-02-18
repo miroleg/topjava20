@@ -14,6 +14,8 @@ import ru.javawebinar.topjava.web.SecurityUtil;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Objects;
 
+//hw6
+
 @Controller
 @RequestMapping(value = "/meals")
 public class JspMealController extends AbstractMealController {
