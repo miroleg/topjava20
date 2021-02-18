@@ -3,7 +3,7 @@ package ru.javawebinar.topjava.model;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-
+// HW3
 public class Meal extends AbstractBaseEntity {
     private  LocalDateTime dateTime;
 
